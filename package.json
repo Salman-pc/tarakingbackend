@@ -1,7 +1,13 @@
 {
   "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "express-error-catcher": "^1.0.2",
     "init": "^0.1.2",
+    "joi": "^18.0.2",
+    "mongoose": "^9.1.1",
     "socket.io": "^4.8.1"
   },
   "devDependencies": {
@@ -10,13 +16,13 @@
   "name": "learnigchatapp",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "dev": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "module"
 }
