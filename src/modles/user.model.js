@@ -10,7 +10,6 @@ let schema = new Schema(
             trim: true
         },
         email: {
-
             type: String,
             required: true,
             trim: true,
@@ -20,10 +19,12 @@ let schema = new Schema(
               type: String,
             required: true
         },
-        location: {
-            type: [Number],
-            index: '2dsphere'
+        role: {
+            type: String,
+            enum: ["customer", "provider"],
+            default: "customer"
         }
+        
     },
     {
         timestamps: true,
@@ -31,17 +32,11 @@ let schema = new Schema(
     }
 )
 
-schema.pre("save", async function (next) {
-    try {
-        if (this.isModified("password")) {
-            this.password = await bcrypt.hash(this.password, 10);
-        }
-        next();
-    } catch (error) {
-        next(error)
+schema.pre("save", async function () {
+    if (this.isModified("password")) {
+        this.password = await bcrypt.hash(this.password, 10);
     }
-
-})
+});
 
 schema.methods.comparePassword = async function (password) {
     return await bcrypt.compare(password, this.password);

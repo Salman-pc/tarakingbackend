@@ -7,5 +7,6 @@ export const JWT_SECRET=process.env.JWT_SECRET
 
 export const COLLECTIONS={
     USERS:"users",
+    USER_ADDRESS:"address"
     
 }

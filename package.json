@@ -7,6 +7,7 @@
     "express-error-catcher": "^1.0.2",
     "init": "^0.1.2",
     "joi": "^18.0.2",
+    "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.1.1",
     "socket.io": "^4.8.1"
   },

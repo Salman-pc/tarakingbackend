@@ -12,4 +12,7 @@ export const userRegisterValidation = Joi.object({
   password: Joi.string().min(6).required().messages({
     "string.min": "Password should have at least 6 characters",
   }),
+  role: Joi.string().valid("customer", "provider").required().messages({
+    "any.only": "Role must be either 'customer' or 'provider'",
+  }),
 });
