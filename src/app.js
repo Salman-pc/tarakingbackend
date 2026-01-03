@@ -13,7 +13,7 @@ const io = new Server(server, {
             "http://localhost:5173",
             "http://localhost:3001",
             "http://localhost:3000",
-            "https://provider-fornend-8hzg.vercel.app/",
+            "https://provider-fornend-b6x2.vercel.app/",
             "https://tarakingfornd.vercel.app/"
         ],
         methods: ["GET", "POST"]
