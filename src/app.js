@@ -8,15 +8,21 @@ import route from './routes/index.js';
 const app = express()
 const server = http.createServer(app)
 const io = new Server(server, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"]
-  }
+    cors: {
+        origin: [
+            "http://localhost:5173",
+            "http://localhost:3001",
+            "http://localhost:3000",
+            "https://provider-fornend-8hzg.vercel.app/",
+            "https://tarakingfornd.vercel.app/"
+        ],
+        methods: ["GET", "POST"]
+    }
 });
 
 app.use(express.json())
 app.use(cors())
-app.use('/api/user',route)
+app.use('/api/user', route)
 
 const trips = new Map()
 const connections = new Map() // Track user types
