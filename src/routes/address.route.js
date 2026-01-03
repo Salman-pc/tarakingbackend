@@ -8,5 +8,7 @@ route.use(auth)
 
 route.post('/add',Addrescontroller.addUserAddress)
 route.get('/list',Addrescontroller.getUserAddress)
+route.put('/update',Addrescontroller.updateUserAddress)
+route.get('/customer-location',Addrescontroller.getCustomerAddress)
 
 export default route
