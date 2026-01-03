@@ -18,7 +18,7 @@ export const addUserAddress = asyncErrorHandler(async(req)=>{
 })
 
 export const getUserAddress = asyncErrorHandler(async(req)=>{
-    let {userId}=req.body
+    let {userId}=req.query
     
     
     if(!userId){
@@ -27,8 +27,8 @@ export const getUserAddress = asyncErrorHandler(async(req)=>{
 
     const UserLocation = await models.Address.findOne({ userId})
 
-    return new Response("user location successfully", { success: true ,data:{
+    return new Response("user location successfully", { success: true ,
         UserLocation
-    } },200)
+     },200)
 
 })
