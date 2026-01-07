@@ -3,6 +3,7 @@ import models from "../modles/index.js";
 
 export const addUserAddress = asyncErrorHandler(async (req) => {
     let { location } = req.body
+    console.log(location,"list location")
     let userId = req?.user?.userId
 
     if (!location) {
